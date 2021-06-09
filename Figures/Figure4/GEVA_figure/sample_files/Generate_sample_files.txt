@@ -1,0 +1,7 @@
+grep -E 'D8|DBunk|DCat|Doil|Dramp|Dlilly' \
+England_samples.txt \
+> Killwood_samples.txt
+
+grep -E 'D8|DBunk|DCat|Doil|Dramp|Dlilly|D10' \
+England_samples.txt \
+> Dorset_samples.txt

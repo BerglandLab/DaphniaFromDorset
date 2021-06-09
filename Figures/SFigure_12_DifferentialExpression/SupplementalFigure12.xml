@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="/Users/alanbergland/daphnia_ref/totalHiCwithallbestgapclosed.fa" hasGeneTrack="false" hasSequenceTrack="true" locus="Scaffold_2217_HRSCAF_2652:5188998-5212733" version="8">
+    <Resources>
+        <Resource name="D86A.reverse.bam" path="../../../../../bam_slices/D86A.reverse.bam"/>
+        <Resource name="Daphnia.aed.0.6.gff" path="../../../../../daphnia_ref/Daphnia.aed.0.6.gff"/>
+        <Resource name="D86A.forward.bam" path="../../../../../bam_slices/D86A.forward.bam"/>
+    </Resources>
+    <Panel height="5141" name="Panel1619451172827" width="1213">
+        <Track attributeKey="D86A.reverse.bam Coverage" autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;127.0;255,255,255;175,175,175" fontSize="10" id="/Users/alanbergland/bam_slices/D86A.reverse.bam_coverage" name="D86A.reverse.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="2721.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="D86A.reverse.bam Junctions" clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/Users/alanbergland/bam_slices/D86A.reverse.bam_junctions" name="D86A.reverse.bam Junctions" visible="false"/>
+        <Track attributeKey="D86A.reverse.bam" clazz="org.broad.igv.sam.AlignmentTrack" displayMode="SQUISHED" experimentType="OTHER" fontSize="10" id="/Users/alanbergland/bam_slices/D86A.reverse.bam" name="D86A.reverse.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="5321" name="Panel1619451592110" width="1213">
+        <Track attributeKey="D86A.forward.bam Coverage" autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" color="175,175,175" colorScale="ContinuousColorScale;0.0;347.0;255,255,255;175,175,175" fontSize="10" id="/Users/alanbergland/bam_slices/D86A.forward.bam_coverage" name="D86A.forward.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="1643.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="D86A.forward.bam Junctions" clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" height="60" id="/Users/alanbergland/bam_slices/D86A.forward.bam_junctions" name="D86A.forward.bam Junctions" visible="false"/>
+        <Track attributeKey="D86A.forward.bam" clazz="org.broad.igv.sam.AlignmentTrack" displayMode="SQUISHED" experimentType="OTHER" fontSize="10" id="/Users/alanbergland/bam_slices/D86A.forward.bam" name="D86A.forward.bam" visible="true">
+            <RenderOptions/>
+        </Track>
+    </Panel>
+    <Panel height="65" name="FeaturePanel" width="1213">
+        <Track attributeKey="Reference sequence" clazz="org.broad.igv.track.SequenceTrack" fontSize="10" id="Reference sequence" name="Reference sequence" sequenceTranslationStrandValue="POSITIVE" shouldShowTranslation="false" visible="true"/>
+        <Track attributeKey="Daphnia.aed.0.6.gff" clazz="org.broad.igv.track.FeatureTrack" color="0,0,178" colorScale="ContinuousColorScale;0.0;1557.0;255,255,255;0,0,178" fontSize="10" id="/Users/alanbergland/daphnia_ref/Daphnia.aed.0.6.gff" name="Daphnia.aed.0.6.gff" visible="true"/>
+    </Panel>
+    <PanelLayout dividerFractions="0.0079155672823219,0.679419525065963,0.9076517150395779"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>

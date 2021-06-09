@@ -1,0 +1,26 @@
+mkdir Killwood
+cd Killwood
+sbatch \
+--array=1-$( cat ../Scaffold_names.txt | wc -l) \
+../run.GEVA.sh \
+../Scaffold_names.txt \
+../Killwood_samples.txt 
+cd ..
+
+mkdir Dorset
+cd Dorset
+sbatch \
+--array=1-$( cat ../Scaffold_names.txt | wc -l) \
+../run.GEVA.sh \
+../Scaffold_names.txt \
+../Dorset_samples.txt 
+cd ..
+
+mkdir England
+cd England
+sbatch \
+--array=1-$( cat ../Scaffold_names.txt | wc -l) \
+../run.GEVA.sh \
+../Scaffold_names.txt \
+../England_samples.txt 
+cd ..
