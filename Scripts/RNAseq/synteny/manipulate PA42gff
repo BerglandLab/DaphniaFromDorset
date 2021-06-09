@@ -1,0 +1,3 @@
+cat ~/GCA_900092285.2_PA42_4.1_genomic.fna | \
+sed -E 's/>FLTH[0-9]{1,}\.[0-9]{1,} Daphnia pulex genome assembly, contig: />/g' | \
+sed 's/, whole genome shotgun sequence//g' > ~/GCA_900092285.2_PA42_4.1_genomic.scaffold.fa
