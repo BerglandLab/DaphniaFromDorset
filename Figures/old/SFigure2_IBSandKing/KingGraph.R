@@ -7,12 +7,23 @@
   library(tidyverse)
   library(patchwork)
 
+  setwd("/Users/alanbergland/Documents/GitHub/DaphniaPulex20162017Sequencing/AlanFigures/SFigure2_IBSandKing")
+
 ### Load file
   load("kinshipscm2.Rdata")
   load("ibs.longunique.Rdata")
 
   kinshipscm2$type <- factor(kinshipscm2$type, levels=c("other", "clone", "selfedPO",
     "AxCF1vsACPO", "AxCF1fullsibs", "AvsC"))
+
+
+### Dxy calculations
+genomesize <- 120*10^6
+nPoly <- 150,455
+
+ibs.longunique[,dxy:=(nPoly*(1-IBS))/genomesize]
+summary(ibs.longunique[IBS>=0.965,])
+plot(dxy~IBS, ibs.longunique)
 
 ### Graph
 King <- ggplot(data=kinshipscm2[type=="other" & medrdA > 14 & medrdB > 14], aes(x=IBS0, y=Kinship)) + geom_point() +
@@ -29,6 +40,13 @@ IBS <- ggplot(data=ibs.longunique, aes(x=IBS)) + geom_histogram(binwidth=0.001) 
   geom_vline(xintercept = 0.965, color="red") +
   theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
   panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+
+
+dxy <- ggplot(data=ibs.longunique, aes(x=dxy)) + geom_histogram(binwidth=.00001) +
+  geom_vline(xintercept = 0.965*nPoly/genomesize, color="red") +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+
 
 KingZoom <- ggplot(data=kinshipscm2[type=="other" & medrdA > 14 & medrdB > 14 &
   Kinship > 0 & IBS0 < 0.10], aes(x=IBS0, y=Kinship)) + geom_point() +
@@ -60,6 +78,9 @@ exampleroB <- ggplot(data=kinshipscm2[clonallineage=="B" & medrdA > 10 & medrdB 
   theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
   panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
   ylim(0, 0.5) + xlim(0,0.1) + theme(legend.position = "none")
+
+
+
 
 
 IBSplusKingB <- (IBS + KingZoom) / (exampleroC + exampleroB + King + plot_layout(widths=c(1,1,2))) +
